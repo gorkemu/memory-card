@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root {
+  --blue: #5D3891;
+  --orange: #F99417;
+  --white: #F5F5F5;
+  --gray: #E8E2E2;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.Scoreboard {
+  display: flex;
+  gap: 30px;
+  margin: 10px;
+  font-size: x-large;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  grid-template-rows: repeat(3, 140px);
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: var(--orange);
+}
+
+.card {
+  height: 120px;
+  width: 120px;
+  background-color: var(--blue);
+  color: var(--white);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: xx-large;
+  justify-self: center;
+  align-self: center;
+  border-radius: 10px;
+}
+
+.card:hover {
+  opacity: 0.8;
+}
