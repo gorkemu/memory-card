@@ -27,10 +27,10 @@ body {
   display: flex;
   gap: 30px;
   margin: 10px;
-  font-size: x-large;
-  background-color: var(--blue);
-  color: var(--white);
-  padding: 15px;
+  font-size: larger;
+  background-color: var(--white);
+  color: var(--blue);
+  padding: 10px;
   border-radius: 10px;
 }
 
@@ -39,7 +39,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
 }
 
 .cards-container {
@@ -72,3 +71,62 @@ body {
 .card img {
   border-radius: 10px;
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.nav-links {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link {
+  color: var(--white);
+  padding: 7px 14px;
+  border-radius: 10px;
+}
+
+.link,
+.link:hover,
+.link:active,
+.link:focus,
+.link:visited {
+  text-decoration: none;
+}
+
+.link:focus {
+  border: 1px solid var(--white);
+}
+
+.word {
+  height: 120px;
+  width: 120px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: xx-large;
+  justify-self: center;
+  align-self: center;
+  border-radius: 10px;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.word:hover {
+  opacity: 0.8;
+}
+
+
