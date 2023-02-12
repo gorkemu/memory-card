@@ -1,46 +1,19 @@
-import React, { useState } from "react";
-import Cards from "./components/Cards";
-import Scoreboard from "./components/Scoreboard";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import PictureApp from './components/PictureApp';
+import WordApp from './components/WordApp';
+import Nav from './components/Nav';
 
 const App = () => {
-  const [cardsArray, setCardsArray] = useState([]);
-  const [score, setScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
-
-
-  const handleScore = () => {
-    setScore((prevScore) => prevScore + 1);
-  };
-
-  const handleBestScore = () => {
-    setBestScore(score)
-  }
-
-  const addCard = (id) => {
-    setCardsArray((prevArray) => [...prevArray, id]);
-  }
-
-  const reset = () => {
-    setScore(0);
-    setCardsArray([]);
-  }
-
-  const handleClick = (id) => {
-    if(!cardsArray.includes(id)) {
-      addCard(id);
-      handleScore();
-    } else {
-      handleBestScore();
-      reset();
-    }
-  }
-
   return (
-    <div className="App">
-      <Scoreboard score={score} bestScore={bestScore} />
-      <Cards cards={cardsArray} handleClick={handleClick} score={score} bestScore={bestScore} />
-    </div>
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<PictureApp />} /> 
+        <Route path="/words" element={<WordApp />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
