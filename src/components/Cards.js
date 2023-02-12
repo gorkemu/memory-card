@@ -3,37 +3,46 @@ import Card from "./Card";
 
 const Cards = ({handleClick, score, bestScore}) => {
 
-    let words = [
+    let pictures = [
         {
-            word: 'where'
+            src: "https://picsum.photos/id/0/120/",
+            id: 0
         },
         {
-            word: 'when'
+            src: "https://picsum.photos/id/1/120/",
+            id: 1
         },
         {
-            word: 'which'
+            src: "https://picsum.photos/id/2/120/",
+            id: 2
         },
         {
-            word: 'how'
+            src: "https://picsum.photos/id/3/120/",
+            id: 3
         },
         {
-            word: 'why'
+            src: "https://picsum.photos/id/4/120/",
+            id: 4
         },
         {
-            word: 'what'
+            src: "https://picsum.photos/id/5/120/",
+            id: 5
         },
         {
-            word: 'who'
+            src: "https://picsum.photos/id/6/120/",
+            id: 6
         },
         {
-            word: 'whom'
+            src: "https://picsum.photos/id/7/120/",
+            id: 7
         },
         {
-            word: 'for'
+            src: "https://picsum.photos/id/8/120/",
+            id: 8
         }
     ]
 
-    const [cards, setCards] = useState(words);
+    const [cards, setCards] = useState(pictures);
 
     const shuffleArray = (array) => {
         for (let i = array.length - 1; i > 0; i--) {
@@ -48,10 +57,11 @@ const Cards = ({handleClick, score, bestScore}) => {
         setCards(newCards);
     }, [score, bestScore]);
 
+
     return (
         <div className="cards-container">
             {cards.map((card) => (
-                <Card card={card} key={card.word} handleClick={handleClick} />
+                <Card card={card} key={card.id} src={card.src} handleClick={handleClick} />
             ))}
         </div>
     )

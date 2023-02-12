@@ -17,8 +17,8 @@ const App = () => {
     setBestScore(score)
   }
 
-  const handleWord = (word) => {
-    setCardsArray((prevArray) => [...prevArray, word]);
+  const handleWord = (id) => {
+    setCardsArray((prevArray) => [...prevArray, id]);
   }
 
   const reset = () => {
@@ -26,9 +26,9 @@ const App = () => {
     setCardsArray([]);
   }
 
-  const handleClick = (word) => {
-    if(!cardsArray.includes(word)) {
-      handleWord(word);
+  const handleClick = (id) => {
+    if(!cardsArray.includes(id)) {
+      handleWord(id);
       handleScore();
     } else {
       handleBestScore();
